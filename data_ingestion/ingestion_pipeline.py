@@ -5,7 +5,11 @@ from typing import List, Tuple
 from langchain_core.documents import Document
 from langchain_astradb import AstraDBVectorStore
 from utils.model_loader import ModelLoader
-from config.config_loader import load_config
+#from config.config_loader import load_config
+from utils.config_loader import load_config
+
+from langchain_groq import ChatGroq
+
 
 class DataIngestion:
     """
@@ -106,7 +110,7 @@ class DataIngestion:
             token=self.db_application_token,
             namespace=self.db_keyspace,
         )
-
+        documents = documents[:20]
         inserted_ids = vstore.add_documents(documents)
         print(f"Successfully inserted {len(inserted_ids)} documents into AstraDB.")
         return vstore, inserted_ids

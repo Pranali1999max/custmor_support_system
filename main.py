@@ -65,8 +65,10 @@ async def index(request: Request):
     """
     Render the chat interface.
     """
-    return templates.TemplateResponse("chat.html", {"request": request})
-
+    return templates.TemplateResponse(
+        request=request,
+        name="chat.html"
+    )
 @app.post("/get",response_class=HTMLResponse)
 async def chat(msg:str=Form(...)):
     result=invoke_chain(msg)

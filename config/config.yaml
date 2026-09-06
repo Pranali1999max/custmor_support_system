@@ -1,9 +1,13 @@
 astra_db:
-  collection_name: "ecommercedata"
+  #collection_name: "ecommercedata"
+  collection_name: "chatbotecomm"
+  #collection_name: "ecommerce-chatbot-rag"
+
+
 
 embedding_model:
   provider: "google"
-  model_name: "models/text-embedding-004"
+  model_name: "models/gemini-embedding-001"
 
 retriever:
   top_k: 10
