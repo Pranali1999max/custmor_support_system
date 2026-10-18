@@ -12,6 +12,11 @@ embedding_model:
 retriever:
   top_k: 10
 
+# llm:
+#   provider: "google"
+#   model_name: "deepseek-r1-distill-llama-70b" 
+
+
 llm:
-  provider: "google"
-  model_name: "deepseek-r1-distill-llama-70b" 
+  provider: "groq"
+  model_name: "openai/gpt-oss-120b"
