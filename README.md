@@ -7,7 +7,12 @@
 
 conda activate ./env
 ```
-``` run on bash
+
+'''
+you should run on bash below port
+'''
+
+```  
 uvicorn main:app --reload --port 8002
 ```
 
